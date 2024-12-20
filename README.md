@@ -6,10 +6,10 @@ I have some plans to "recover" InTouchApp for Windows Phone. :)
 
 So, this repo is my attempt to remake discontinued InTouchApp  WP8.1 app onto real UWP app. 
 
+At now it's only early bird, draft UWP application (only "sketch" at now...)
 
-## About
-Very early bird; draft UWP application (only "sketch" at now...)
-
+## Photo of installed original app (sign up fail, Android device needed for advice)
+![New logo](Images/img001.png)
 
 ## Tech/dev details
 - Platforms: UWP only

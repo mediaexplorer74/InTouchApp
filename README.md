@@ -2,9 +2,9 @@
 ![New logo](Images/logo.png)
 
 ## About
-I have some plans to "recover" 4PDA-for-W10M. :)
+I have some plans to "recover" InTouchApp for Windows Phone. :)
 
-So, this is my attempt to remake  discontinued InTouchApp  WP8.1 app onto real UWP app. 
+So, this repo is my attempt to remake discontinued InTouchApp  WP8.1 app onto real UWP app. 
 
 
 ## About

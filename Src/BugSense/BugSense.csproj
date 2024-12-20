@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F37397C1-EBD5-4EC3-A093-D0818A804AA3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BugSense</RootNamespace>
+    <AssemblyName>BugSense</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
+    <PlatformTarget>ARM64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
+    <PlatformTarget>ARM64</PlatformTarget>
+    <OutputPath>bin\ARM64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BugSenseHandler.cs" />
+    <Compile Include="Core\BugSenseEventFactory.cs" />
+    <Compile Include="Core\BugSenseEventTag.cs" />
+    <Compile Include="Core\BugSenseHandlerBase.cs" />
+    <Compile Include="Core\BugSenseProperties.cs" />
+    <Compile Include="Core\BugSenseSyncContextHandler.cs" />
+    <Compile Include="Core\DeviceConnectionState.cs" />
+    <Compile Include="Core\ExtraData.cs" />
+    <Compile Include="Core\FileNameType.cs" />
+    <Compile Include="Core\FileRepository.cs" />
+    <Compile Include="Core\Helpers\BugSenseRequestWorker.cs" />
+    <Compile Include="Core\Helpers\EntropyUUID.cs" />
+    <Compile Include="Core\Helpers\ErrorHashSignature.cs" />
+    <Compile Include="Core\Helpers\ExceptionExtension.cs" />
+    <Compile Include="Core\Helpers\Extensions.cs" />
+    <Compile Include="Core\IBugSenseFileClient.cs" />
+    <Compile Include="Core\Interfaces\IBugSenseServiceClient.cs" />
+    <Compile Include="Core\Interfaces\IContentResolver.cs" />
+    <Compile Include="Core\Interfaces\IHashSignature.cs" />
+    <Compile Include="Core\Interfaces\IRequestJsonSerializer.cs" />
+    <Compile Include="Core\Interfaces\IRequestWorker.cs" />
+    <Compile Include="Core\LoggedRequestResultDelegate.cs" />
+    <Compile Include="Core\Model\AppEnvironment.cs" />
+    <Compile Include="Core\Model\BugSenseCheckTaskFaultResult.cs" />
+    <Compile Include="Core\Model\BugSenseClient.cs" />
+    <Compile Include="Core\Model\BugSenseContentType.cs" />
+    <Compile Include="Core\Model\BugSenseErrorResponse.cs" />
+    <Compile Include="Core\Model\BugSenseException.cs" />
+    <Compile Include="Core\Model\BugSenseExceptionRequest.cs" />
+    <Compile Include="Core\Model\BugSenseInternalRequest.cs" />
+    <Compile Include="Core\Model\BugSenseLoggedRequestEventArgs.cs" />
+    <Compile Include="Core\Model\BugSenseLogResult.cs" />
+    <Compile Include="Core\Model\BugSenseLogType.cs" />
+    <Compile Include="Core\Model\BugSenseMessageException.cs" />
+    <Compile Include="Core\Model\BugSensePerformance.cs" />
+    <Compile Include="Core\Model\BugSenseRequestType.cs" />
+    <Compile Include="Core\Model\BugSenseResponseResult.cs" />
+    <Compile Include="Core\Model\BugSenseResponseResultEventArgs.cs" />
+    <Compile Include="Core\Model\BugSenseResult.cs" />
+    <Compile Include="Core\Model\BugSenseResultState.cs" />
+    <Compile Include="Core\Model\BugSenseUnhandledHandlerEventArgs.cs" />
+    <Compile Include="Core\Model\ConnectionType.cs" />
+    <Compile Include="Core\Model\CrashExtraData.cs" />
+    <Compile Include="Core\Model\CrashExtraMap.cs" />
+    <Compile Include="Core\Model\CrashOnLastRun.cs" />
+    <Compile Include="Core\Model\CrashType.cs" />
+    <Compile Include="Core\Model\DataFixture.cs" />
+    <Compile Include="Core\Model\DataResponse.cs" />
+    <Compile Include="Core\Model\DataType.cs" />
+    <Compile Include="Core\Model\EventDataFixture.cs" />
+    <Compile Include="Core\Model\ExceptionDataFixture.cs" />
+    <Compile Include="Core\Model\HashSignature.cs" />
+    <Compile Include="Core\Model\JsonRequestType.cs" />
+    <Compile Include="Core\Model\LimitedBreadCrumbList.cs" />
+    <Compile Include="Core\Model\LimitedCrashExtraDataList.cs" />
+    <Compile Include="Core\Model\NetworkDataFixture.cs" />
+    <Compile Include="Core\Model\PublicContentResolver.cs" />
+    <Compile Include="Core\Model\PublicRequestJsonSerializer.cs" />
+    <Compile Include="Core\Model\RemoteSettingsData.cs" />
+    <Compile Include="Core\Model\RemoteSettingsResponse.cs" />
+    <Compile Include="Core\Model\ScreenDataFixture.cs" />
+    <Compile Include="Core\Model\SerializeResult.cs" />
+    <Compile Include="Core\Model\SessionManager.cs" />
+    <Compile Include="Core\Model\SplunkTransaction.cs" />
+    <Compile Include="Core\Model\StacktraceHelper.cs" />
+    <Compile Include="Core\Model\StateStatus.cs" />
+    <Compile Include="Core\Model\SyncContextExceptionDelegate.cs" />
+    <Compile Include="Core\Model\SyncContextExceptionEventArgs.cs" />
+    <Compile Include="Core\Model\Transaction.cs" />
+    <Compile Include="Core\Model\TransactionCompletedStatus.cs" />
+    <Compile Include="Core\Model\TransactionResult.cs" />
+    <Compile Include="Core\Model\TransactionStartResult.cs" />
+    <Compile Include="Core\Model\TransactionStatus.cs" />
+    <Compile Include="Core\Model\TransactionStopResult.cs" />
+    <Compile Include="Core\Model\TrStart.cs" />
+    <Compile Include="Core\Model\TrStop.cs" />
+    <Compile Include="Core\ScreenProperties.cs" />
+    <Compile Include="Core\ServiceRepository.cs" />
+    <Compile Include="Core\SplunkInterceptionHttpHandler.cs" />
+    <Compile Include="Device\Specific\DeviceUtil.cs" />
+    <Compile Include="Device\Specific\IDeviceUtil.cs" />
+    <Compile Include="Helpers\Digest.cs" />
+    <Compile Include="Helpers\MD5.cs" />
+    <Compile Include="Helpers\MD5ChangedEventArgs.cs" />
+    <Compile Include="Helpers\MD5ChangingEventArgs.cs" />
+    <Compile Include="Helpers\MD5Helper.cs" />
+    <Compile Include="Helpers\MD5InitializerConstant.cs" />
+    <Compile Include="Model\ExceptionManager.cs" />
+    <Compile Include="Model\IExceptionManager.cs" />
+    <Compile Include="Model\MockExceptionManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Splunk\Mi\Utilities\CommonHelper.cs" />
+    <Compile Include="Splunk\Mi\Utilities\ConsoleManager.cs" />
+    <Compile Include="Splunk\Mi\Utilities\SplunkTransactionManager.cs" />
+    <Compile Include="Windows\Specific\ManifestAppInfo.cs" />
+    <EmbeddedResource Include="Properties\BugSense.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.14</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

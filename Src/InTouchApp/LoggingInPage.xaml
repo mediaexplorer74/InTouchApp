@@ -1,0 +1,95 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+      xmlns:local="using:windowsphone_app" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      x:Class="windowsphone_app.LoggingIn">
+    <Page.Background>
+        <ThemeResource ResourceKey="ApplicationPageBackgroundThemeBrush" />
+    </Page.Background>
+    <Page.BottomAppBar>
+        <CommandBar x:Name="ProcessingCommandBar" ClosedDisplayMode="Minimal">
+            <PrimaryCommands>
+                <CommandBarElementCollection>
+                    <AppBarButton  x:Name="FeedbackBtn" Icon="Mail" Label="Support">
+                        <AttachedFlyout>
+                            <Flyout x:Name="FeedbackFlyout" Placement="Top">
+                                <Content>
+                                    <Grid>
+                                        <Children>
+                                            <UIElementCollection>
+                                                <TextBox x:Name="InTouchID_Text" Header="Please enter your Username" Margin="0,10,0,0" />
+                                                <Button x:ConnectionId="3" x:Name="SendFeedback_Flyout_Button" HorizontalAlignment="Center" VerticalAlignment="Bottom" Content="Send" />
+                                                <CheckBox x:Name="ShallAttachLog_CheckBox" Content="Include Logs" Margin="0,80,0,0" />
+                                            </UIElementCollection>
+                                        </Children>
+                                    </Grid>
+                                </Content>
+                                <FlyoutPresenterStyle>
+                                    <Style TargetType="FlyoutPresenter">
+                                        <Setters>
+                                            <SetterBaseCollection>
+                                                <Setter Property="ScrollViewer.ZoomMode" Value="Enabled" />
+                                                <Setter Property="MinHeight" Value="250" />
+                                            </SetterBaseCollection>
+                                        </Setters>
+                                    </Style>
+                                </FlyoutPresenterStyle>
+                            </Flyout>
+                        </AttachedFlyout>
+                    </AppBarButton>
+                    <AppBarButton x:ConnectionId="2" x:Name="HelpBtn" Icon="Help" Label="Help / FAQ" />
+                </CommandBarElementCollection>
+            </PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+    <Page.Content>
+        <Grid x:Name="LayoutRoot" Background="Transparent">
+            <ChildrenTransitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition />
+                </TransitionCollection>
+            </ChildrenTransitions>
+            <RowDefinitions>
+                <RowDefinitionCollection>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </RowDefinitionCollection>
+            </RowDefinitions>
+            <Children>
+                <UIElementCollection>
+                    <StackPanel x:Name="TitlePanel" Row="0" Margin="19,0,19,0">
+                        <Children>
+                            <UIElementCollection>
+                                <TextBlock x:Name="PageTitle" Text="Logging in" Margin="0,10,0,26,5" FontSize="25" />
+                            </UIElementCollection>
+                        </Children>
+                    </StackPanel>
+                    <Grid x:Name="ContentPanel" Row="1" Margin="12,0,333,12,0" IsHoldingEnabled="True">
+                        <Children>
+                            <UIElementCollection>
+                                <TextBlock x:Name="Processing_Label" Margin="0,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20,26" Row="1" Text="Please wait, logging in ..." TextAlignment="Center" />
+                                <ProgressRing x:Name="Processing_ProgressRing" HorizontalAlignment="Center" Margin="0,205,0,0" VerticalAlignment="Top" IsActive="False" FontSize="30" Height="100" Width="100" />
+                                <TextBlock x:Name="DontCloseApp_Block" Margin="0,400,0,0" Height="100" FontSize="20,26" TextAlignment="Center" LineHeight="27" Text="Please do not close the app" />
+                            </UIElementCollection>
+                        </Children>
+                    </Grid>
+                </UIElementCollection>
+            </Children>
+        </Grid>
+    </Page.Content>
+</Page>
+<!--Page
+    x:Class="windowsphone_app.LoggingIn"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:windowsphone_app"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+    </Grid>
+</Page-->

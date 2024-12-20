@@ -1,0 +1,85 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+      xmlns:local="using:windowsphone_app" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      x:Class="windowsphone_app.Welcome">
+    
+     <Page.Background>
+      <ThemeResource ResourceKey="ApplicationPageBackgroundThemeBrush" />
+    </Page.Background>
+
+    <Page.Content>
+        <Grid x:Name="LayoutRoot" Background="Transparent" Margin="0,0,0,0">
+            <Grid.ChildrenTransitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition />
+                </TransitionCollection>
+            </Grid.ChildrenTransitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.Children>
+                <StackPanel x:Name="TitlePanel"  HorizontalAlignment="Center">
+                    <StackPanel.Children>
+                        <TextBlock x:Name="PageTitle" Text="Welcome to InTouchApp" 
+                                    Margin="0,50,0,0" FontSize="25" TextAlignment="Center"
+                                    HorizontalAlignment="Center" />
+                        <TextBlock Text="KEEP CONTACTS SAFE" Margin="0,50,0,0" 
+                                FontSize="20,26" TextAlignment="Center" 
+                                HorizontalAlignment="Center" />
+                        <TextBlock x:Name="Login_Block" 
+                        HorizontalAlignment="Center" 
+                        Margin="0,125,0,0" TextWrapping="Wrap" 
+                        VerticalAlignment="Top" 
+                        FontSize="20,26" 
+                        TextAlignment="Center">
+                            <TextBlock.Inlines>
+
+                                <Run Text="LOGIN" Foreground="#FF1AA1E1" />
+                                <LineBreak />
+                                <Run Text="Have an account?" FontSize="17">
+                                    <Run.Foreground>
+                                        <SolidColorBrush>
+                                            <SolidColorBrush.Color>
+                                                <ThemeResource ResourceKey="PhoneBaseMidColor" />
+                                            </SolidColorBrush.Color>
+                                        </SolidColorBrush>
+                                    </Run.Foreground>
+                                </Run>
+                            </TextBlock.Inlines>
+                        </TextBlock>
+
+                        <TextBlock 
+                        x:Name="Signup_Block"
+                        HorizontalAlignment="Center" 
+                        Margin="0,50,0,0" 
+                        TextWrapping="Wrap" 
+                        VerticalAlignment="Top"
+                        FontSize="20,26" 
+                        TextAlignment="Center"
+                    >
+                            <TextBlock.Inlines>
+
+                                <Run Text="SIGN UP" Foreground="#FF1AA1E1" />
+                                <LineBreak />
+                                <Run Text="New to InTouch?" FontSize="17">
+                                    <Run.Foreground>
+                                        <SolidColorBrush>
+                                            <SolidColorBrush.Color>
+                                                <ThemeResource ResourceKey="PhoneBaseMidColor" />
+                                            </SolidColorBrush.Color>
+                                        </SolidColorBrush>
+                                    </Run.Foreground>
+                                </Run>
+
+                            </TextBlock.Inlines>
+                        </TextBlock>
+                    </StackPanel.Children>
+                </StackPanel>
+            </Grid.Children>
+        </Grid>
+    </Page.Content>
+</Page>
+

@@ -1,0 +1,396 @@
+﻿<Page xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:RateMe="using:RateMe" 
+      xmlns:Rating="using:JISoft" 
+      xmlns:RatingControl="using:JISoft.RatingControl" 
+      xmlns:local="using:windowsphone_app" 
+      x:Class="windowsphone_app.Settings">
+    
+    <Page.Background>
+        <ThemeResource ResourceKey="ApplicationPageBackgroundThemeBrush" />
+    </Page.Background>
+    
+    <Page.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="ContactsDataTemplate" x:Name="ContactsDataTemplate">
+                <Template>
+                    <Grid x:Name="ContentPanel" Row="1">
+                        <RowDefinitions>
+                            <RowDefinitionCollection>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </RowDefinitionCollection>
+                        </RowDefinitions>
+                        <Children>
+                            <UIElementCollection>
+                                <TextBlock x:Name="PageTitle" Text="Contacts" Margin="-18,-40,0,26,5" FontSize="25" />
+                                <TextBox x:ConnectionId="27" x:Name="SearchTextBox" PlaceholderText="Search" Margin="-18,0,0,26,5" Visibility="Collapsed" />
+                                <TextBlock x:ConnectionId="28" x:Name="NoResult" Text="No Results" Margin="-18,70,0,26,5" FontSize="20" Visibility="Collapsed" />
+                                <TextBlock x:ConnectionId="29" x:Name="RestoringContacts" Text="Restoring contacts ..." Margin="-18,170,0,26,5" FontSize="20" Visibility="Collapsed" HorizontalAlignment="Center" />
+                                <ListView x:ConnectionId="30" x:Name="ContactListView" Height="не число" MaxHeight="580" Padding="0,0,0,100" Margin="-15,0,0,26,5" Row="1" IsItemClickEnabled="False" HorizontalContentAlignment="Stretch">
+                                    <ItemsSource>
+                                        <Binding Mode="TwoWay" />
+                                    </ItemsSource>
+                                    <ItemContainerStyle>
+                                        <Style TargetType="ListViewItem">
+                                            <Setters>
+                                                <SetterBaseCollection>
+                                                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                                </SetterBaseCollection>
+                                            </Setters>
+                                        </Style>
+                                    </ItemContainerStyle>
+                                    <ItemTemplate>
+                                        <DataTemplate>
+                                            <Template>
+                                                <Grid x:ConnectionId="31">
+                                                    <AttachedFlyout>
+                                                        <MenuFlyout>
+                                                            <Items>
+                                                                <MenuFlyoutItemBaseCollection>
+                                                                    <MenuFlyoutItem x:ConnectionId="32" x:Name="Edit_MenuFlyoutItem" Text="Edit" />
+                                                                    <MenuFlyoutItem x:ConnectionId="33" x:Name="Share_MenuFlyoutItem" Text="Share" />
+                                                                    <MenuFlyoutItem x:ConnectionId="34" x:Name="Delete_MenuFlyoutItem" Text="Delete" />
+                                                                </MenuFlyoutItemBaseCollection>
+                                                            </Items>
+                                                            <MenuFlyoutPresenterStyle>
+                                                                <Style TargetType="MenuFlyoutPresenter">
+                                                                    <Setters>
+                                                                        <SetterBaseCollection>
+                                                                            <Setter Property="ScrollViewer.ZoomMode" Value="Enabled" />
+                                                                            <Setter Property="MinHeight" Value="200" />
+                                                                        </SetterBaseCollection>
+                                                                    </Setters>
+                                                                </Style>
+                                                            </MenuFlyoutPresenterStyle>
+                                                        </MenuFlyout>
+                                                    </AttachedFlyout>
+                                                    <Children>
+                                                        <UIElementCollection>
+                                                            <Border BorderBrush="LightGray" BorderThickness="0,0,0,0,5">
+                                                                <Child>
+                                                                    <Grid>
+                                                                        <RowDefinitions>
+                                                                            <RowDefinitionCollection>
+                                                                                <RowDefinition Height="Auto" />
+                                                                                <RowDefinition Height="Auto" />
+                                                                            </RowDefinitionCollection>
+                                                                        </RowDefinitions>
+                                                                        <ColumnDefinitions>
+                                                                            <ColumnDefinitionCollection>
+                                                                                <ColumnDefinition Width="Auto" />
+                                                                                <ColumnDefinition />
+                                                                            </ColumnDefinitionCollection>
+                                                                        </ColumnDefinitions>
+                                                                        <Children>
+                                                                            <UIElementCollection>
+                                                                                <Ellipse Margin="0,5,0,5" Height="48" VerticalAlignment="Center" Width="48">
+                                                                                    <Fill>
+                                                                                        <ImageBrush Stretch="Uniform">
+                                                                                            <ImageSource>
+                                                                                                <Binding Path="mContactDisplayImage" Mode="TwoWay" />
+                                                                                            </ImageSource>
+                                                                                        </ImageBrush>
+                                                                                    </Fill>
+                                                                                </Ellipse>
+                                                                                <StackPanel Column="1" Margin="15,0,0,3">
+                                                                                    <Children>
+                                                                                        <UIElementCollection>
+                                                                                            <TextBlock x:ConnectionId="35" Name="contact_display_name" FontSize="20">
+                                                <Text>
+                                                  <Binding Path="mContactDisplayName" Mode="TwoWay" />
+                                                </Text>
+                                                <Style>
+                                                  <ThemeResource ResourceKey="ListViewItemTextBlockStyle" />
+                                                </Style>
+                                                                                            </TextBlock>
+                                                                                            <TextBlock x:ConnectionId="36" Name="contact_organization_name" FontSize="15">
+                                                <Text>
+                                                  <Binding Path="mContactOrganizationInfo" Mode="TwoWay" />
+                                                </Text>
+                                                <Style>
+                                                  <ThemeResource ResourceKey="ListViewItemSubheaderTextBlockStyle" />
+                                                </Style>
+                                                                                            </TextBlock>
+                                                                                        </UIElementCollection>
+                                                                                    </Children>
+                                                                                </StackPanel>
+                                                                            </UIElementCollection>
+                                                                        </Children>
+                                                                    </Grid>
+                                                                </Child>
+                                                            </Border>
+                                                        </UIElementCollection>
+                                                    </Children>
+                                                </Grid>
+                                            </Template>
+                                        </DataTemplate>
+                                    </ItemTemplate>
+                                </ListView>
+                            </UIElementCollection>
+                        </Children>
+                    </Grid>
+                </Template>
+            </DataTemplate>
+            <DataTemplate x:Key="SyncDataTemplate" x:Name="SyncDataTemplate">
+                <Template>
+                    <Grid x:Name="ContentPanel" Row="1">
+                        <Children>
+                            <UIElementCollection>
+                                <TextBlock x:Name="PageTitle" Text="Sync" Margin="-18,-40,0,26,5" FontSize="25" />
+                                <TextBlock x:ConnectionId="21" x:Name="Last_Sync_Time_Block" Margin="0,-330,0,0" Height="100" FontSize="20,26" TextAlignment="Center" />
+                                <TextBlock x:ConnectionId="22" x:Name="Contacts_Managed_Block" Margin="0,-250,0,0" Height="100" FontSize="20,26" TextAlignment="Center" />
+                                <TextBlock x:ConnectionId="23" x:Name="Sync_Status_Block" Margin="0,-180,0,0" Height="100" FontSize="20,26" TextAlignment="Center" LineHeight="30" TextWrapping="Wrap" />
+                                <TextBlock x:ConnectionId="24" x:Name="Image_Status_Block" Margin="0,-80,0,0" Height="100" FontSize="20,26" TextAlignment="Center" TextWrapping="Wrap" />
+                                <ProgressRing x:ConnectionId="25" x:Name="Sync_ProgressRing" Margin="0,20,0,0" FontSize="30" Height="100" Width="100">
+                                    <IsActive>
+                                        <Binding Path="Sync_Progress" />
+                                    </IsActive>
+                                </ProgressRing>
+                                <TextBlock x:ConnectionId="26" x:Name="DontCloseApp_Block" Margin="0,220,0,0" Height="100" FontSize="20,26" TextAlignment="Center" LineHeight="27" Text="Please do not close the app" Visibility="Collapsed" />
+                            </UIElementCollection>
+                        </Children>
+                    </Grid>
+                </Template>
+            </DataTemplate>
+            <DataTemplate x:Key="SettingsDataTemplate" x:Name="SettingsDataTemplate">
+                <Template>
+                    <Grid x:Name="ContentPanel" Row="1">
+                        <Children>
+                            <UIElementCollection>
+                                <TextBlock x:Name="PageTitle" Text="Settings" Margin="-18,-40,0,0" FontSize="25" />
+                                <TextBlock x:Name="ContactID_Header_Block" Margin="-18,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20,26" Text="Username" />
+                                <TextBlock x:ConnectionId="10" x:Name="ContactID_Block" Margin="-18,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="17">
+                  <Foreground>
+                    <SolidColorBrush>
+                      <Color>
+                        <ThemeResource ResourceKey="PhoneBaseMidColor" />
+                      </Color>
+                    </SolidColorBrush>
+                  </Foreground>
+                                </TextBlock>
+                                <TextBlock x:ConnectionId="11" x:Name="AccountType_Header_Block" Margin="-18,110,150,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20,26" Text="Account Type" />
+                                <TextBlock x:ConnectionId="12" x:Name="Upgrade_Block" Margin="-18,110,20,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20,26" Text="Upgrade" HorizontalAlignment="Right" Visibility="Collapsed" />
+                                <TextBlock x:ConnectionId="13" x:Name="AccountType_Block" Margin="-18,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="17">
+                  <Foreground>
+                    <SolidColorBrush>
+                      <Color>
+                        <ThemeResource ResourceKey="PhoneBaseMidColor" />
+                      </Color>
+                    </SolidColorBrush>
+                  </Foreground>
+                                </TextBlock>
+                                <TextBlock x:ConnectionId="14" x:Name="Backup_Phone_Contacts_Block" Margin="-18,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20,26" Width="400">
+                  <Inlines>
+                    <InlineCollection>
+                      <Run Text="Backup Phone Contacts" />
+                      <LineBreak />
+                      <Run Text="Bring contact changes into InTouch " FontSize="17">
+                        <Foreground>
+                          <SolidColorBrush>
+                            <Color>
+                              <ThemeResource ResourceKey="PhoneBaseMidColor" />
+                            </Color>
+                          </SolidColorBrush>
+                        </Foreground>
+                      </Run>
+                    </InlineCollection>
+                  </Inlines>
+                                </TextBlock>
+                                <ToggleSwitch x:ConnectionId="15" x:Name="DownloadPhotoOnWiFi_TS" Header="Get photos only on wifi" Margin="-20,270,0,0" VerticalAlignment="Top" FontSize="20,26" />
+                                <TextBlock x:ConnectionId="16" x:Name="Support_Block" Margin="-18,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20,26">
+                  <Inlines>
+                    <InlineCollection>
+                      <Run Text="Support" />
+                      <LineBreak />
+                      <Run Text="Ask a question / share feedback" FontSize="17">
+                        <Foreground>
+                          <SolidColorBrush>
+                            <Color>
+                              <ThemeResource ResourceKey="PhoneBaseMidColor" />
+                            </Color>
+                          </SolidColorBrush>
+                        </Foreground>
+                      </Run>
+                    </InlineCollection>
+                  </Inlines>
+                  <AttachedFlyout>
+                    <Flyout x:Name="FeedbackFlyout" Placement="Top">
+                      <Content>
+                        <Grid>
+                          <Children>
+                            <UIElementCollection>
+                              <TextBox x:ConnectionId="18" x:Name="Feedback_Message_Text" Header="Type your message here" FontSize="18" Height="135" TextWrapping="Wrap" AcceptsReturn="False" />
+                              <Button x:ConnectionId="19" x:Name="SendFeedback_Flyout_Button" HorizontalAlignment="Center" VerticalAlignment="Bottom" Content="Send" />
+                              <CheckBox x:ConnectionId="20" x:Name="ShallAttachLog_CheckBox" Content="Include Logs" Margin="0,140,0,0" />
+                            </UIElementCollection>
+                          </Children>
+                        </Grid>
+                      </Content>
+                      <FlyoutPresenterStyle>
+                        <Style TargetType="FlyoutPresenter">
+                          <Setters>
+                            <SetterBaseCollection>
+                              <Setter Property="ScrollViewer.ZoomMode" Value="Enabled" />
+                              <Setter Property="MinHeight" Value="280" />
+                            </SetterBaseCollection>
+                          </Setters>
+                        </Style>
+                      </FlyoutPresenterStyle>
+                    </Flyout>
+                  </AttachedFlyout>
+                                </TextBlock>
+                                <TextBlock x:ConnectionId="17" x:Name="NeedHelp_Block" Margin="-18,440,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20,26">
+                  <Inlines>
+                    <InlineCollection>
+                      <Run Text="Help / FAQ" />
+                      <LineBreak />
+                      <Run Text="Find answer to common questions" FontSize="17">
+                        <Foreground>
+                          <SolidColorBrush>
+                            <Color>
+                              <ThemeResource ResourceKey="PhoneBaseMidColor" />
+                            </Color>
+                          </SolidColorBrush>
+                        </Foreground>
+                      </Run>
+                    </InlineCollection>
+                  </Inlines>
+                                </TextBlock>
+                            </UIElementCollection>
+                        </Children>
+                    </Grid>
+                </Template>
+            </DataTemplate>
+            <DataTemplate x:Key="DebugDataTemplate" x:Name="DebugDataTemplate">
+                <Template>
+                    <Grid x:Name="ContentPanel" Row="1">
+                        <Children>
+                            <UIElementCollection>
+                                <TextBlock x:Name="PageTitle" Text="Debug" Margin="-18,-40,0,26,5" FontSize="25" />
+                                <TextBlock x:ConnectionId="3" x:Name="SyncSession_Owner_Block" HorizontalAlignment="Stretch" Margin="-18,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="не число" />
+                                <TextBlock x:ConnectionId="4" x:Name="SyncSession_ID_Block" HorizontalAlignment="Stretch" Margin="-18,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="не число" />
+                                <TextBlock x:ConnectionId="5" x:Name="SyncSession_State_Block" HorizontalAlignment="Stretch" Margin="-18,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="не число" />
+                                <TextBlock x:ConnectionId="6" x:Name="SyncSession_LastUpdateTime" HorizontalAlignment="Stretch" Margin="-18,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="не число" />
+                                <TextBlock x:ConnectionId="7" x:Name="StoreRevisionNumber_Block" HorizontalAlignment="Stretch" Margin="-18,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="не число" />
+                                <TextBlock x:ConnectionId="8" x:Name="ModifiedContactsCount_Block" HorizontalAlignment="Stretch" Margin="-18,435,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="не число" />
+                                <TextBlock x:ConnectionId="9" x:Name="DBDirtyIntouchContactsCount_Block" HorizontalAlignment="Stretch" Margin="-18,510,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="не число" />
+                            </UIElementCollection>
+                        </Children>
+                    </Grid>
+                </Template>
+            </DataTemplate>
+            <DataTemplate x:Key="AboutDataTemplate" x:Name="AboutDataTemplate">
+                <Template>
+                    <Grid x:Name="ContentPanel" Row="1">
+                        <Children>
+                            <UIElementCollection>
+                                <TextBlock x:Name="PageTitle" Text="About" Margin="-18,-40,0,0" FontSize="25" />
+                                <TextBlock Text="KEEP CONTACTS SAFE" Margin="-18,50,0,0" FontSize="20,26" TextAlignment="Center" />
+                                <TextBlock x:ConnectionId="2" x:Name="AppVersion_Block" Margin="-18,0,0,80" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="17">
+                  <Foreground>
+                    <SolidColorBrush>
+                      <Color>
+                        <ThemeResource ResourceKey="PhoneBaseMidColor" />
+                      </Color>
+                    </SolidColorBrush>
+                  </Foreground>
+                                </TextBlock>
+                            </UIElementCollection>
+                        </Children>
+                    </Grid>
+                </Template>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Page.Resources>
+  
+    <Page.Content>
+        <Grid>
+            <ChildrenTransitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition />
+                </TransitionCollection>
+            </ChildrenTransitions>
+            <RowDefinitions>
+                <RowDefinitionCollection>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </RowDefinitionCollection>
+            </RowDefinitions>
+            <Children>
+                <UIElementCollection>
+                    <StackPanel x:Name="TitlePanel" Row="0" Margin="19,0,0,0">
+                        <Children>
+                            <UIElementCollection>
+                                <Hub x:ConnectionId="37" x:Name="MainHub" Margin="0,40,0,0">
+                                    <Sections>
+                                        <HubSectionCollection>
+                                            <HubSection x:Name="ContacList_Section" Margin="0,0,20,0">
+                                                <DataContext>
+                                                    <Binding Path="Groups" />
+                                                </DataContext>
+                                                <ContentTemplate>
+                                                    <StaticResource ResourceKey="ContactsDataTemplate" />
+                                                </ContentTemplate>
+                                            </HubSection>
+                                            <HubSection x:Name="Sync_Section" Margin="0,0,20,0">
+                                                <DataContext>
+                                                    <Binding Path="Groups" />
+                                                </DataContext>
+                                                <ContentTemplate>
+                                                    <StaticResource ResourceKey="SyncDataTemplate" />
+                                                </ContentTemplate>
+                                            </HubSection>
+                                            <HubSection x:Name="Settings_Section" Margin="0,0,20,0">
+                                                <DataContext>
+                                                    <Binding Path="Groups" />
+                                                </DataContext>
+                                                <ContentTemplate>
+                                                    <StaticResource ResourceKey="SettingsDataTemplate" />
+                                                </ContentTemplate>
+                                            </HubSection>
+                                            <HubSection x:ConnectionId="38" x:Name="Debug_Section" Margin="0,0,20,0" Visibility="Collapsed">
+                                                <DataContext>
+                                                    <Binding Path="Groups" />
+                                                </DataContext>
+                                                <ContentTemplate>
+                                                    <StaticResource ResourceKey="DebugDataTemplate" />
+                                                </ContentTemplate>
+                                            </HubSection>
+                                            <HubSection x:Name="About_Section" Margin="0,0,20,0">
+                                                <DataContext>
+                                                    <Binding Path="Groups" />
+                                                </DataContext>
+                                                <ContentTemplate>
+                                                    <StaticResource ResourceKey="AboutDataTemplate" />
+                                                </ContentTemplate>
+                                            </HubSection>
+                                        </HubSectionCollection>
+                                    </Sections>
+                                </Hub>
+                            </UIElementCollection>
+                        </Children>
+                    </StackPanel>
+                </UIElementCollection>
+            </Children>
+        </Grid>
+    </Page.Content>
+</Page>
+<!--Page
+    x:Class="windowsphone_app.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:windowsphone_app"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+    </Grid>
+</Page-->

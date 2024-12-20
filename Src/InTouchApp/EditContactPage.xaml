@@ -1,0 +1,495 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+      xmlns:local="using:windowsphone_app" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      x:Class="windowsphone_app.EditContact">
+    <Page.Background>
+        <ThemeResource ResourceKey="ApplicationPageBackgroundThemeBrush" />
+    </Page.Background>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <PrimaryCommands>
+                <CommandBarElementCollection>
+                    <AppBarButton x:ConnectionId="2" x:Name="Save" Icon="Save" Label="save" />
+                    <AppBarButton x:ConnectionId="3" x:Name="Cancel" Icon="Cancel" Label="cancel" />
+                </CommandBarElementCollection>
+            </PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+    <Page.Content>
+        <ScrollViewer VerticalScrollMode="Enabled">
+            <Content>
+                <StackPanel x:Name="TitlePanel" Margin="19,0,19,0">
+                    <Children>
+                        <UIElementCollection>
+                            <TextBlock x:Name="PageTitle" Text="New Contact" Margin="0,10,0,26,5" FontSize="25" />
+                            <Grid>
+                                <Children>
+                                    <UIElementCollection>
+                                        <Ellipse x:ConnectionId="33" Margin="0,0,0,25" Name="ContactDisplayImage" Column="0" Row="0" Height="96" Width="96" HorizontalAlignment="Left">
+                                            <Fill>
+                                                <ImageBrush x:Name="ContactImage" Stretch="Fill" ImageSource="ms-appx:///Assets/in_img_default_profile_48dp.png" />
+                                            </Fill>
+                                        </Ellipse>
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid>
+                                <ColumnDefinitions>
+                                    <ColumnDefinitionCollection>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </ColumnDefinitionCollection>
+                                </ColumnDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="ContactName_TBlock" Text="Name" Foreground="Gray" FontSize="17" Margin="0,0,0,3" Column="0" />
+                                        <Image x:ConnectionId="32" Name="ContactName_Img" Source="ms-appx:///Assets\photo_2015-06-02_18-25-36.jpg" Column="1" Stretch="Fill" Height="30" Width="30" HorizontalAlignment="Right" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <TextBox x:ConnectionId="4" Name="ContactName_TBox" Margin="0,0,0,25" />
+                            <Grid Name="MobilePhoneGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="MobilePhone_TBlock" Text="Mobile phone" Foreground="Gray" FontSize="17" Margin="0,0,0,3" />
+                                        <TextBox x:ConnectionId="31" Name="MobilePhone_TBox" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid Name="MobilePhone2Grid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="Mobile2Phone_TBlock" Text="Mobile 2 phone" Foreground="Gray" FontSize="17" Margin="0,0,0,3" />
+                                        <TextBox x:ConnectionId="30" Name="Mobile2Phone_TBox" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid Name="HomePhoneGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="HomePhone_TBlock" Text="Home phone" Foreground="Gray" FontSize="17" Margin="0,0,0,3" />
+                                        <TextBox x:ConnectionId="29" Name="HomePhone_TBox" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid Name="HomePhone2Grid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="Home2Phone_TBlock" Text="Home 2 phone" Foreground="Gray" FontSize="17" Margin="0,0,0,3" />
+                                        <TextBox x:ConnectionId="28" Name="Home2Phone_TBox" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid Name="WorkPhoneGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="WorkPhone_TBlock" Text="Work phone" Foreground="Gray" FontSize="17" Margin="0,0,0,3" />
+                                        <TextBox x:ConnectionId="27" Name="WorkPhone_TBox" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid Name="WorkPhone2Grid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="Work2Phone_TBlock" Text="Work 2 phone" Foreground="Gray" FontSize="17" Margin="0,0,0,3" />
+                                        <TextBox x:ConnectionId="26" Name="Work2Phone_TBox" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid Name="CompanyPhoneGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="CompanyPhone_TBlock" Text="Company phone" Foreground="Gray" FontSize="17" Margin="0,0,0,3" />
+                                        <TextBox x:ConnectionId="25" Name="CompanyPhone_TBox" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid Name="HomeFaxGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="HomeFax_TBlock" Text="Home fax" Foreground="Gray" FontSize="17" Margin="0,0,0,3" />
+                                        <TextBox x:ConnectionId="24" Name="HomeFax_TBox" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid Name="WorkFaxGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="WorkFax_TBlock" Text="Work fax" Foreground="Gray" FontSize="17" Margin="0,0,0,3" />
+                                        <TextBox x:ConnectionId="23" Name="WorkFax_TBox" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid x:ConnectionId="5" Name="PhoneOtherGrid">
+                                <ColumnDefinitions>
+                                    <ColumnDefinitionCollection>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </ColumnDefinitionCollection>
+                                </ColumnDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <Image Name="PhoneOther_Img" Source="ms-appx:///Assets\in_ic_add_circle_black_72px.png" Column="0" Height="40" Width="40" Margin="0,0,15,15" HorizontalAlignment="Left" />
+                                        <TextBlock Name="PhoneOther_TBlock" Text="phone" FontSize="30" FontWeight="SemiLight" Margin="0,0,0,25" Column="1" HorizontalAlignment="Left">
+                      <Style>
+                        <StaticResource ResourceKey="SubheaderTextBlockStyle" />
+                      </Style>
+                                        </TextBlock>
+                                    </UIElementCollection>
+                                </Children>
+                                <AttachedFlyout>
+                                    <ListPickerFlyout x:ConnectionId="22" Placement="Full">
+                                        <ItemsSource>
+                                            <Binding Path="listOfItems" />
+                                        </ItemsSource>
+                                        <ItemTemplate>
+                                            <DataTemplate>
+                                                <Template>
+                                                    <TextBlock>
+                            <Text>
+                              <Binding Path="itemName" />
+                            </Text>
+                                                    </TextBlock>
+                                                </Template>
+                                            </DataTemplate>
+                                        </ItemTemplate>
+                                    </ListPickerFlyout>
+                                </AttachedFlyout>
+                            </Grid>
+                            <Grid Name="PersonalEmailGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="PersonalEmail_TBlock" Text="Personal email" Foreground="Gray" FontSize="17" Margin="0,0,0,3" />
+                                        <TextBox x:ConnectionId="21" Name="PersonalEmail_TBox" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid Name="WorkEmailGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="WorkEmail_TBlock" Text="Work email" Foreground="Gray" FontSize="17" Margin="0,0,0,3" />
+                                        <TextBox x:ConnectionId="20" Name="WorkEmail_TBox" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid Name="OtherEmailGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="OtherEmail_TBlock" Text="Other email" Foreground="Gray" FontSize="17" Margin="0,0,0,3" />
+                                        <TextBox x:ConnectionId="19" Name="OtherEmail_TBox" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid x:ConnectionId="6" Name="EmailOtherGrid">
+                                <ColumnDefinitions>
+                                    <ColumnDefinitionCollection>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </ColumnDefinitionCollection>
+                                </ColumnDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <Image Name="EmailOther_Img" Source="ms-appx:///Assets\in_ic_add_circle_black_72px.png" Column="0" Height="40" Width="40" Margin="0,0,15,15" HorizontalAlignment="Left" />
+                                        <TextBlock Name="EmailOther_TBlock" Text="email" FontSize="30" FontWeight="SemiLight" Margin="0,0,0,25" Column="1" HorizontalAlignment="Left">
+                      <Style>
+                        <StaticResource ResourceKey="SubheaderTextBlockStyle" />
+                      </Style>
+                                        </TextBlock>
+                                    </UIElementCollection>
+                                </Children>
+                                <AttachedFlyout>
+                                    <ListPickerFlyout x:ConnectionId="18" Placement="Full">
+                                        <ItemsSource>
+                                            <Binding Path="listOfItems" />
+                                        </ItemsSource>
+                                        <ItemTemplate>
+                                            <DataTemplate>
+                                                <Template>
+                                                    <TextBlock>
+                            <Text>
+                              <Binding Path="itemName" />
+                            </Text>
+                                                    </TextBlock>
+                                                </Template>
+                                            </DataTemplate>
+                                        </ItemTemplate>
+                                    </ListPickerFlyout>
+                                </AttachedFlyout>
+                            </Grid>
+                            <Grid x:ConnectionId="7" Name="HomeAddressGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="HomeAddress_TBlock" Text="home address" FontSize="30" FontWeight="SemiLight" Margin="0,0,0,3">
+                      <Style>
+                        <StaticResource ResourceKey="SubheaderTextBlockStyle" />
+                      </Style>
+                                        </TextBlock>
+                                        <TextBlock Name="HomeAdressInfo_TBlock" Foreground="#FF1AA1E1" FontSize="17" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid x:ConnectionId="8" Name="WorkAddressGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="WorkAddress_TBlock" Text="work address" FontSize="30" FontWeight="SemiLight" Margin="0,0,0,3">
+                      <Style>
+                        <StaticResource ResourceKey="SubheaderTextBlockStyle" />
+                      </Style>
+                                        </TextBlock>
+                                        <TextBlock Name="WorkAdressInfo_TBlock" Text="test" Foreground="#FF1AA1E1" FontSize="17" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid x:ConnectionId="9" Name="OtherAddressGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="OtherAddress_TBlock" Text="other address" FontSize="30" FontWeight="SemiLight" Margin="0,0,0,3">
+                      <Style>
+                        <StaticResource ResourceKey="SubheaderTextBlockStyle" />
+                      </Style>
+                                        </TextBlock>
+                                        <TextBlock Name="OtherAdressInfo_TBlock" Foreground="#FF1AA1E1" FontSize="17" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid Name="WebsiteGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="Website_TBlock" Text="Website" Foreground="Gray" FontSize="17" Margin="0,0,0,3" />
+                                        <TextBox x:ConnectionId="17" Name="Website_TBox" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid x:ConnectionId="10" Name="BirthdayGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="Birthday_TBlock" Text="birthday" FontSize="30" FontWeight="SemiLight" Margin="0,0,0,3">
+                      <Style>
+                        <StaticResource ResourceKey="SubheaderTextBlockStyle" />
+                      </Style>
+                                        </TextBlock>
+                                        <TextBlock Name="Birthdate_TBlock" Foreground="#FF1AA1E1" FontSize="17" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid x:ConnectionId="11" Name="AnniversaryGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="Anniversary_TBlock" Text="anniversary" FontSize="30" FontWeight="SemiLight" Margin="0,0,0,3">
+                      <Style>
+                        <StaticResource ResourceKey="SubheaderTextBlockStyle" />
+                      </Style>
+                                        </TextBlock>
+                                        <TextBlock Name="AnniversaryDate_TBlock" Foreground="#FF1AA1E1" FontSize="17" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid Name="NotesGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="Notes_TBlock" Text="Notes" Foreground="Gray" FontSize="17" Margin="0,0,0,3" />
+                                        <TextBox x:ConnectionId="16" Name="Notes_TBox" Margin="0,0,0,25" Row="1" TextWrapping="Wrap" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid Name="CompanyGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="Company_TBlock" Text="Company" Foreground="Gray" FontSize="17" Margin="0,0,0,3" />
+                                        <TextBox x:ConnectionId="15" Name="Company_TBox" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid Name="PositionGrid" Visibility="Collapsed">
+                                <RowDefinitions>
+                                    <RowDefinitionCollection>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </RowDefinitionCollection>
+                                </RowDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <TextBlock Name="Position_TBlock" Text="Job title" Foreground="Gray" FontSize="17" Margin="0,0,0,3" />
+                                        <TextBox x:ConnectionId="14" Name="Position_TBox" Margin="0,0,0,25" Row="1" />
+                                    </UIElementCollection>
+                                </Children>
+                            </Grid>
+                            <Grid x:ConnectionId="12" Name="OtherGrid">
+                                <ColumnDefinitions>
+                                    <ColumnDefinitionCollection>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </ColumnDefinitionCollection>
+                                </ColumnDefinitions>
+                                <Children>
+                                    <UIElementCollection>
+                                        <Image Name="Other_Img" Source="ms-appx:///Assets\in_ic_add_circle_black_72px.png" Column="0" Height="40" Width="40" Margin="0,0,15,15" HorizontalAlignment="Left" />
+                                        <TextBlock Name="Other_TBlock" Text="other" FontSize="30" FontWeight="SemiLight" Margin="0,0,0,25" Column="1" HorizontalAlignment="Left">
+                      <Style>
+                        <StaticResource ResourceKey="SubheaderTextBlockStyle" />
+                      </Style>
+                                        </TextBlock>
+                                    </UIElementCollection>
+                                </Children>
+                                <AttachedFlyout>
+                                    <ListPickerFlyout x:ConnectionId="13" Placement="Full">
+                                        <ItemsSource>
+                                            <Binding Path="listOfItems" />
+                                        </ItemsSource>
+                                        <ItemTemplate>
+                                            <DataTemplate>
+                                                <Template>
+                                                    <TextBlock>
+                            <Text>
+                              <Binding Path="itemName" />
+                            </Text>
+                                                    </TextBlock>
+                                                </Template>
+                                            </DataTemplate>
+                                        </ItemTemplate>
+                                    </ListPickerFlyout>
+                                </AttachedFlyout>
+                            </Grid>
+                        </UIElementCollection>
+                    </Children>
+                </StackPanel>
+            </Content>
+        </ScrollViewer>
+    </Page.Content>
+</Page>
+<!--Page
+    x:Class="windowsphone_app.EditContact"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:windowsphone_app"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+    </Grid>
+</Page-->

@@ -1,0 +1,97 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+      xmlns:local="using:windowsphone_app" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      x:Class="windowsphone_app.SignUp">
+    
+    <Page.Background>
+        <ThemeResource ResourceKey="ApplicationPageBackgroundThemeBrush" />
+    </Page.Background>
+    
+    <Page.Content>
+        <Grid x:Name="LayoutRoot" Background="Transparent" Margin="12,0,12,0">
+            <ChildrenTransitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition />
+                </TransitionCollection>
+            </ChildrenTransitions>
+            <RowDefinitions>
+                <RowDefinitionCollection>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </RowDefinitionCollection>
+            </RowDefinitions>
+            <Children>
+                <UIElementCollection>
+                    <StackPanel x:Name="TitlePanel" Row="0" Margin="19,0,19,0">
+                        <Children>
+                            <UIElementCollection>
+                                <TextBlock x:Name="PageTitle" Text="Sign Up" Margin="0,0,0,0" FontSize="25" />
+                                <TextBox x:ConnectionId="2" x:Name="UserName_TB" Margin="0,0,0,0" TextWrapping="Wrap" HorizontalContentAlignment="Left" Header="First and Last Name" PlaceholderText="Your name" FontSize="15" VerticalAlignment="Top" Padding="7,0,8,0" VerticalContentAlignment="Center" />
+                                <TextBlock x:Name="UserName_msg" Margin="0,0,0,0" TextWrapping="Wrap" FontSize="14" Foreground="Red" Visibility="Collapsed" HorizontalAlignment="Left" />
+                                <TextBox x:ConnectionId="3" x:Name="Email_TB" Margin="0,0,0,0" TextWrapping="Wrap" HorizontalContentAlignment="Left" Header="Email ID" PlaceholderText="Your Email ID" FontSize="14" Padding="7,0,8,0" VerticalContentAlignment="Center" />
+                                <TextBlock x:Name="Email_msg" Margin="0,0,0,0" TextWrapping="Wrap" FontSize="14" HorizontalAlignment="Left" Foreground="Red" Visibility="Collapsed" />
+                                <Grid>
+                                    <Children>
+                                        <UIElementCollection>
+                                            <ComboBox x:ConnectionId="9" Name="CountryCombo" Margin="0,0,150,0" Header="Country" FontSize="15" DisplayMemberPath="Country" PlaceholderText="Select Country" Column="0">
+                                                <ItemsSource>
+                                                    <Binding Path="ListofCountry" />
+                                                </ItemsSource>
+                                            </ComboBox>
+                                            <TextBox x:Name="Country_code_TB" HorizontalAlignment="Right" Margin="0,0,0,0" Width="100" Column="1" IsEnabled="True" Header="Code">
+                                                <Text>
+                                                    <Binding ElementName="CountryCombo" Path="SelectedItem.Country_code" />
+                                                </Text>
+                                            </TextBox>
+                                        </UIElementCollection>
+                                    </Children>
+                                </Grid>
+                                <TextBox x:ConnectionId="4" x:Name="Phone_TB" Margin="0,0,0,0" TextWrapping="Wrap" HorizontalContentAlignment="Left" Header="Mobile Number" PlaceholderText="Area/STD code &amp; Number" FontSize="15" Padding="7,0,8,0" VerticalContentAlignment="Center" />
+                                <TextBlock x:Name="Phone_msg" Margin="0,0,0,0" TextWrapping="Wrap" FontSize="14" HorizontalAlignment="Left" Foreground="Red" Visibility="Collapsed" />
+                                <TextBox x:ConnectionId="5" x:Name="InTouchID_TB" Margin="0,0,0,0" TextWrapping="Wrap" HorizontalContentAlignment="Left" Header="Select Username" PlaceholderText="8-20 alphabets or numbers" FontSize="15" Padding="7,0,8,0" VerticalContentAlignment="Center" />
+                                <TextBlock x:Name="InTouchID_msg" Margin="0,0,0,0" TextWrapping="Wrap" FontSize="14" HorizontalAlignment="Left" Foreground="Red" Visibility="Collapsed" />
+                                <PasswordBox x:ConnectionId="6" x:Name="Password_PB" Margin="-3,0,0,0" PasswordChar="*" HorizontalContentAlignment="Left" PlaceholderText="Password" Header="Password" FontSize="20" Padding="7,0,8,0" VerticalContentAlignment="Center" />
+                                <TextBlock x:Name="Password_msg" Margin="0,0,0,0" TextWrapping="Wrap" FontSize="14" HorizontalAlignment="Left" Foreground="Red" Visibility="Collapsed" />
+                                <Button x:ConnectionId="7" x:Name="SignUp_Btn" HorizontalAlignment="Stretch" Content="Sign Up" Margin="0,5,0,0" FontSize="20" />
+                                <TextBlock x:Name="SignUp_msg" Margin="0,0,0,0" TextWrapping="Wrap" FontSize="14" HorizontalAlignment="Center" Foreground="Red" Visibility="Collapsed" />
+                                <TextBlock x:Name="TermsOfService_Block_SignUp" Margin="0,0,0,0" FontSize="13" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Width="300">
+                  <Inlines>
+                    <InlineCollection>
+                      <Hyperlink x:ConnectionId="8" x:Name="TermsOfService_Hyperlink_SignUp" Foreground="#FF1AA1E1" FontSize="13">
+                        <Inlines>
+                          <InlineCollection>
+                            <Underline>
+                              <Inlines>
+                                <InlineCollection implicititems="By signing up you accept our Terms of Service" />
+                              </Inlines>
+                            </Underline>
+                          </InlineCollection>
+                        </Inlines>
+                      </Hyperlink>
+                    </InlineCollection>
+                  </Inlines>
+                                </TextBlock>
+                            </UIElementCollection>
+                        </Children>
+                    </StackPanel>
+                </UIElementCollection>
+            </Children>
+        </Grid>
+    </Page.Content>
+</Page>
+<!--Page
+    x:Class="windowsphone_app.SignUp"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:windowsphone_app"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+    </Grid>
+</Page-->

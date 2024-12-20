@@ -18,7 +18,7 @@ At now it's only early bird, draft UWP application (only "sketch" at now...)
 - Min. Win. OS build: 15063
 
 ## Status / my 2 cents
-- ForPDA decomp. completed but over 100500 bugs there ;
+- App decomp. completed but over 100500 bugs there ;
 - Draft. Prototype / Build failed ;
 - Work-in-progress .
 
